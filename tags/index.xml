@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Brain and Machine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research Design</title>
+      <link>https://wenting-wang.github.io/tags/research-design/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/tags/research-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中文</title>
+      <link>https://wenting-wang.github.io/tags/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/tags/%E4%B8%AD%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Deep Learning</title>
       <link>https://wenting-wang.github.io/tags/deep-learning/</link>
@@ -22,15 +40,6 @@
       <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wenting-wang.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>中文</title>
-      <link>https://wenting-wang.github.io/tags/%E4%B8%AD%E6%96%87/</link>
-      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wenting-wang.github.io/tags/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
     
