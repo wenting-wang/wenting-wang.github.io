@@ -13,7 +13,7 @@
       <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://wenting-wang.github.io/docs/causal-inference-social-science/</guid>
-      <description>&lt;p&gt;相关性不能说明因果。几乎完全依赖于观察，很少做对照实验的社会科学，又怎么度量因果呢？这里做一些简短的梳理。&lt;/p&gt;</description>
+      <description>&lt;p&gt;相关性不能说明因果。几乎完全依赖于观察，很少做对照实验的社会科学，又怎么度量因果呢？关键在处理混杂因素（Confounder）。这里稍作整理，粗略梳理了一下社会科学中因果推断（Causal Inference）的常用方法，再附上一些实例：&lt;/p&gt;</description>
     </item>
     
   </channel>
