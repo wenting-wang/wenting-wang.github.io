@@ -6,7 +6,16 @@
     <description>Recent content in Docs on Brain and Machine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>价值函数和动作函数的关系</title>
+      <link>https://wenting-wang.github.io/docs/rl-01/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/docs/rl-01/</guid>
+      <description>&lt;p&gt;强化学习（Reinforcement Learning）中的状态价值函数（State-value function）和动作价值函数（Action-value function）的关系。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>社会科学研究中的因果推断</title>
       <link>https://wenting-wang.github.io/docs/causal-inference-social-science/</link>

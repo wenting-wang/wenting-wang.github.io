@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>深度学习工作站搭建记录 - 1/3 硬件篇 - Brain and Machine</title>
+	<title>价值函数和动作函数的关系 - Brain and Machine</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="深度学习工作站搭建记录 - 1/3 硬件篇" />
-<meta property="og:description" content="折腾了大半个月搞丹炉，再也不怕笔记本哪天烧了。读书和实习期间经常搬家，一直是用笔记本跑程序，也用过AWS和Google Cloud搞过几个小项目。这么将就了几年，终于醒悟还是需要一个台式机提高工作效率。加上云计算越来越贵，服务器不够稳定，跑跑小demo讲真还是装个台式机经济实惠。" />
+		<meta property="og:title" content="价值函数和动作函数的关系" />
+<meta property="og:description" content="强化学习（Reinforcement Learning）中的状态价值函数（State-value function）和动作价值函数（Action-value function）的关系。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wenting-wang.github.io/docs/dl-workstation-1/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2019-06-21T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-06-21T00:00:00+00:00" />
+<meta property="og:url" content="https://wenting-wang.github.io/docs/rl-01/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-06-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-13T00:00:00+00:00" />
 
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,95 +70,28 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">深度学习工作站搭建记录 - 1/3 硬件篇</h1>
+			<h1 class="post__title">价值函数和动作函数的关系</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2019-06-21T00:00:00Z">June 21, 2019</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/data-science/" rel="category">Data Science</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-13T00:00:00Z">June 13, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/data-science/" rel="category">Data Science</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<p>折腾了大半个月搞丹炉，再也不怕笔记本哪天烧了。读书和实习期间经常搬家，一直是用笔记本跑程序，也用过AWS和Google Cloud搞过几个小项目。这么将就了几年，终于醒悟还是需要一个台式机提高工作效率。加上云计算越来越贵，服务器不够稳定，跑跑小demo讲真还是装个台式机经济实惠。</p>
-<p>记录下搭建过程，给需要的朋友或者以后作参考。坐标德国，Altenate上入手的大部分，eBay淘的二手机箱。</p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Product</th>
-<th>Price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CPU</td>
-<td>AMD Ryzen Threadripper 1920X WOF, Prozessor</td>
-<td>€ 380.20</td>
-</tr>
-<tr>
-<td>CPU Fan</td>
-<td>Noctua NH-U14S TR4-SP3, CPU-Kühler</td>
-<td>€ 76.10</td>
-</tr>
-<tr>
-<td>GPU</td>
-<td>Gainward GeForce RTX 2070, Grafikkarte</td>
-<td>€ 493.70</td>
-</tr>
-<tr>
-<td>Motherboard</td>
-<td>GIGABYTE X399 AORUS PRO, Mainboard </td>
-<td>€ 302.94</td>
-</tr>
-<tr>
-<td>RAM</td>
-<td>Corsair DIMM 32 GB DDR4-3200 Quad-Kit, Arbeitsspeicher</td>
-<td>€ 239.31</td>
-</tr>
-<tr>
-<td>SSD</td>
-<td>Samsung 970 EVO Plus 500 GB, Solid State Drive</td>
-<td>€ 113.20</td>
-</tr>
-<tr>
-<td>Display</td>
-<td>AOC e2460Sh, LED-Monitor </td>
-<td>€ 118.71</td>
-</tr>
-<tr>
-<td>Power</td>
-<td>Corsair RM1000i 1000W, PC-Netzteil </td>
-<td>€ 148.38</td>
-</tr>
-<tr>
-<td>Case</td>
-<td>Corsair Air 540 </td>
-<td>€ 90</td>
-</tr>
-<tr>
-<td>HDD</td>
-<td>拆的朋友的</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>总计2054.91欧元，折合人民币大约15900元。</p>
-<p>硬件的兼容就是谜中谜，一不小心两次买错CPU风扇，退货重订，德村的快递等到怀疑人生。硬件的更新换代很快，性价比合适的情况下最好买新不买旧，同时多参考最新的文章。</p>
-<p>装机看说明书和视频一步步来还是很快的。基本步骤：</p>
-<ol>
-<li>CPU, SSD, RAM, GPU 插上主板；</li>
-<li>主板装进机箱，装上CPU散热；</li>
-<li>装上电源，硬盘，光驱，机箱风扇，键盘鼠标显示器；</li>
-<li>走线（CPU-电源，GPU-电源，硬盘-电源，光驱-电源，风扇-主板），通上电，愉快点亮这位Frankenstein。</li>
-</ol>
-<p>注意有些主板上有多个SSD（M.2）插槽，每个存取速度不同，GPU插槽每个也不一样，主板上的插槽旁边会标数字，选最大的就可以了（这里用的SSD x8，PCIe x16），一般在靠近CPU的地方。</p>
-<h2 id="参考资料">参考资料</h2>
-<p><a href="https://medium.com/the-mission/how-to-build-the-perfect-deep-learning-computer-and-save-thousands-of-dollars-9ec3b2eb4ce2">How to build the perfect Deep Learning Computer and save thousands of dollars</a></p>
-<p><a href="https://timdettmers.com/2018/12/16/deep-learning-hardware-guide/">A Full Hardware Guide to Deep Learning</a></p>
-<p><a href="http://cn.soulmachine.me/2016-08-13-my-deep-learning-workstation-assemble-process-note/">我的深度学习工作站攒机过程记录</a></p>
-<p><a href="https://www.bilibili.com/video/av32201007/?spm_id_from=333.788.videocard.0">装机系列教程</a></p>
-<h2 id="深度学习工作站搭建系列">深度学习工作站搭建系列</h2>
-<p><a href="https://wenting-wang.github.io/docs/dl-workstation-2/">深度学习工作站搭建记录 - 2/3 系统篇</a></p>
-<p><a href="https://wenting-wang.github.io/docs/dl-workstation-3/">深度学习工作站搭建记录 - 3/3 环境篇</a></p>
+			<p>强化学习（Reinforcement Learning）中的状态价值函数（State-value function）和动作价值函数（Action-value function）的关系。</p>
+<h2 id="状态价值函数">状态价值函数</h2>
+<p>根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$），即状态价值函数（$V_{\pi}(s)$ State-value function）。回报为所有未来奖励（$R_k$）折现到$t$时刻的总和。按照指数递减，近期的折得少，未来的折得大，遥远未来的基本忽略不计。$\gamma$为折扣因子。</p>
+<p>$$ V_{\pi}(s) = E[G_t | S_t = s]$$</p>
+<p>$$ G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + &hellip;$$</p>
+<h2 id="动作价值函数">动作价值函数</h2>
+<p>agent选择了动作$a$，再继续采用策略$\pi$。根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$），即动作价值函数（$Q_{\pi}(s,a)$ Action-value function）。</p>
+<p>$$ Q_{\pi}(s,a) = E[G_t | S_t = s, A_t = a]$$</p>
+<h2 id="图示两个价值函数之间的关系">图示两个价值函数之间的关系</h2>
+<p>不管是哪种价值函数，都表示了所有可能的未来可以获得的平均价值。agent可以在当下知道某个策略的平均价值，根据价值调整自己的动作，而不必等到游戏结束才知道奖励结果。在同一个状态可能有多种选择（policy function $\pi(a|s)$ is stochastic），如左转还是右转。即便做出了选择，也可能进入不同的新的状态（dynamic function $p(s^\prime, r | s, a)$ is also stochastic），如左转后，有可能遇上红灯，也可能是绿灯。而所有的随机因素，都被囊括在了价值函数中，为agent当下的决策提供参考。</p>
+<p>对于每一个动作，状态价值函数存储了其下一步的所有可能的状态价值。</p>
+<p><img src="/img/v_n_q.png" alt="v_n_q"></p>
+<p>对于最优价值函数，有如下关系，大大简化了运算。</p>
+<p>$$ \pi_<em>(s) = \argmax_a q_</em>(s,a)$$</p>
 		</div>
 		<footer class="post__footer">
 			
@@ -166,10 +99,7 @@
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/deep-learning/" rel="tag">Deep Learning</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/machine-learning/" rel="tag">Machine Learning</a>
+			<a class="tags__link btn" href="/tags/reinforcement-learning/" rel="tag">Reinforcement Learning</a>
 		</li>
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/%E4%B8%AD%E6%96%87/" rel="tag">中文</a>
@@ -193,10 +123,10 @@
 </div>
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/docs/dl-workstation-2/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">深度学习工作站搭建记录 - 2/3 系统篇</p>
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/docs/causal-inference-social-science/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">社会科学研究中的因果推断</p>
 		</a>
 	</div>
 </nav>
