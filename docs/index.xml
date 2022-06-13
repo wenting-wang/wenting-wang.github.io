@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>价值函数和动作函数的关系</title>
+      <title>状态价值函数与动作价值函数</title>
       <link>https://wenting-wang.github.io/docs/rl-01/</link>
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
