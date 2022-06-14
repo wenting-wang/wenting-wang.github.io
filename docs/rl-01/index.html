@@ -90,18 +90,18 @@ MathJax.Hub.Config({
 		<div class="content post__content clearfix">
 			<p>强化学习（Reinforcement Learning）中的状态价值函数（State-value function）和动作价值函数（Action-value function）的关系。</p>
 <h2 id="状态价值函数">状态价值函数</h2>
-<p>根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$），即状态价值函数（$V_{\pi}(s)$ State-value function）。回报为所有未来奖励（$R_k$）折现到$t$时刻的总和。按照指数递减，近期的折得少，未来的折得大，遥远未来的基本忽略不计。$\gamma$为折扣因子。</p>
+<p>状态价值函数（$V_{\pi}(s)$ ），state-value function，即根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$）。回报为所有未来奖励（$R_k$）折现到$t$时刻的总和。按照指数递减，近期的折得少，未来的折得大，遥远未来的基本忽略不计。$\gamma$为折扣因子。</p>
 <p>$$ V_{\pi}(s) = E[G_t | S_t = s]$$</p>
 <p>$$ G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + &hellip;$$</p>
 <h2 id="动作价值函数">动作价值函数</h2>
-<p>agent选择了动作$a$，再继续采用策略$\pi$。根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$），即动作价值函数（$Q_{\pi}(s,a)$ Action-value function）。</p>
+<p>动作价值函数（$Q_{\pi}(s,a)$ ），action-value function，即agent选择了动作$a$，再继续采用策略$\pi$，根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$）。</p>
 <p>$$ Q_{\pi}(s,a) = E[G_t | S_t = s, A_t = a]$$</p>
 <h2 id="图示两个价值函数之间的关系">图示两个价值函数之间的关系</h2>
 <p>不管是哪种价值函数，都表示了所有可能的未来可以获得的平均价值。agent可以在当下知道某个策略的平均价值，根据价值调整自己的动作，而不必等到游戏结束才知道奖励结果。在同一个状态可能有多种选择（policy function $\pi(a|s)$ is stochastic），如左转还是右转。即便做出了选择，也可能进入不同的新的状态（dynamic function $p(s^\prime, r | s, a)$ is also stochastic），如左转后，有可能遇上红灯，也可能是绿灯。而所有的随机因素，都被囊括在了价值函数中，为agent当下的决策提供参考。</p>
-<p>对于每一个动作，状态价值函数存储了其下一步的所有可能的状态价值。</p>
+<p>对于每一个动作，状态价值函数存储了该动作之后的所有可能的状态的价值。即把下一步的状态价值缓存进对应的动作价值中。</p>
 <p><img src="/img/v_n_q.png" alt="v_n_q"></p>
 <p>对于最优价值函数，有如下关系，大大简化了运算。</p>
-<p>$$ \pi_<em>(s) = \argmax_a q_</em>(s,a)$$</p>
+<p>$$ \pi_<em>(s) = \argmax_a q_</em>(s,a) $$</p>
 		</div>
 		<footer class="post__footer">
 			
