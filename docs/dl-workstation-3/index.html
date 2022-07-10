@@ -97,41 +97,41 @@ MathJax.Hub.Config({
 </ul>
 <h2 id="安装nvidia-driver">安装NVIDIA Driver</h2>
 <p>首先把其他的旧的NVIDIA Driver移除，重启：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get purge nvidia*
-sudo reboot
-</code></pre></div><p>添加显卡驱动ppa，自动安装系统推荐的驱动，重启：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo ubuntu-drivers autoinstall
-sudo reboot
-</code></pre></div><p>也可以通过<code>sudo ubuntu-drivers devices</code>查看可安装的驱动，用命令安装指定的驱动，如<code>sudo apt install nvidia-390</code>手动安装<code>nvidia-390</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get purge nvidia*
+</span></span><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><p>添加显卡驱动ppa，自动安装系统推荐的驱动，重启：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo add-apt-repository ppa:graphics-drivers/ppa
+</span></span><span style="display:flex;"><span>sudo ubuntu-drivers autoinstall
+</span></span><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><p>也可以通过<code>sudo ubuntu-drivers devices</code>查看可安装的驱动，用命令安装指定的驱动，如<code>sudo apt install nvidia-390</code>手动安装<code>nvidia-390</code>。</p>
 <p>查看是否安装成功：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nvidia-smi
-</code></pre></div><h2 id="安装anaconda--cuda--cudnn--tensorflow-gpu">安装Anaconda + CUDA + cuDNN + Tensorflow GPU</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvidia-smi
+</span></span></code></pre></div><h2 id="安装anaconda--cuda--cudnn--tensorflow-gpu">安装Anaconda + CUDA + cuDNN + Tensorflow GPU</h2>
 <p>下载<a href="https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh">Anaconda 5.2</a>，下载后放在<code>/usr/opt/</code>供所有用户使用，安装sh文件。安装好后创建一个新的virtual environment，用python3.6做解释器（避坑：python3.7暂时不支持tensorflow-gpu）。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create -n tf-gpu python<span style="color:#f92672">=</span>3.6
-conda activate tf-gpu
-</code></pre></div><p>注意版本，安装可以相互兼容的CUDA、cuDNN、Tensorflow GPU：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda install <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>tensorflow-gpu<span style="color:#f92672">==</span>1.12 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>cudatoolkit<span style="color:#f92672">==</span>9.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>cudnn<span style="color:#f92672">=</span>7.1.2 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>h5py
-</code></pre></div><h2 id="安装pycharm">安装PyCharm</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda create -n tf-gpu python<span style="color:#f92672">=</span>3.6
+</span></span><span style="display:flex;"><span>conda activate tf-gpu
+</span></span></code></pre></div><p>注意版本，安装可以相互兼容的CUDA、cuDNN、Tensorflow GPU：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>tensorflow-gpu<span style="color:#f92672">==</span>1.12 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>cudatoolkit<span style="color:#f92672">==</span>9.0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>cudnn<span style="color:#f92672">=</span>7.1.2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>h5py
+</span></span></code></pre></div><h2 id="安装pycharm">安装PyCharm</h2>
 <p>官网下载PyCharm，新建Project，Interpreter选择Anaconda的tf-gpu环境，用以下代码测试一下是否安装成功：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
-<span style="color:#66d9ef">with</span> tf<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#39;/gpu:0&#39;</span>):
-    a <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>constant([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>], shape<span style="color:#f92672">=</span>[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span>)
-    b <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>constant([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>], shape<span style="color:#f92672">=</span>[<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>], name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
-    c <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>matmul(a, b)
-
-<span style="color:#66d9ef">with</span> tf<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> sess:
-    print(sess<span style="color:#f92672">.</span>run(c))
-</code></pre></div><p>如果成功安装，可以看到输出结果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tf version <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.12.0</span>
-[[<span style="color:#ae81ff">22.</span> <span style="color:#ae81ff">28.</span>]
-[<span style="color:#ae81ff">49.</span> <span style="color:#ae81ff">64.</span>]]
-</code></pre></div><p>到这里工作站就搞好啦。Have Fun！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> tf<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#39;/gpu:0&#39;</span>):
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>constant([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>], shape<span style="color:#f92672">=</span>[<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>constant([<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">5.0</span>, <span style="color:#ae81ff">6.0</span>], shape<span style="color:#f92672">=</span>[<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>], name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>matmul(a, b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> tf<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> sess:
+</span></span><span style="display:flex;"><span>    print(sess<span style="color:#f92672">.</span>run(c))
+</span></span></code></pre></div><p>如果成功安装，可以看到输出结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tf version <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.12.0</span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#ae81ff">22.</span> <span style="color:#ae81ff">28.</span>]
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">49.</span> <span style="color:#ae81ff">64.</span>]]
+</span></span></code></pre></div><p>到这里工作站就搞好啦。Have Fun！</p>
 <h2 id="参考资料">参考资料</h2>
 <p><a href="https://medium.com/@redowan/no-bullshit-guide-on-installing-tensorflow-gpu-ubuntu-18-04-18-10-238924cc4a6a">No Bullshit Guide on Installing Tensorflow GPU (Ubuntu 18.04/18.10)</a></p>
 <h2 id="深度学习工作站搭建系列">深度学习工作站搭建系列</h2>
@@ -189,11 +189,11 @@ conda activate tf-gpu
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/docs/install-hddm/">Install HDDM 0.9 package(2022.07)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/rl-01/">状态价值函数与动作价值函数</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/causal-inference-social-science/">社会科学研究中的因果推断</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/dl-workstation-3/">深度学习工作站搭建记录 - 3/3 环境篇</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/dl-workstation-2/">深度学习工作站搭建记录 - 2/3 系统篇</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/dl-workstation-1/">深度学习工作站搭建记录 - 1/3 硬件篇</a></li>
 		</ul>
 	</div>
 </div>
@@ -202,6 +202,8 @@ conda activate tf-gpu
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/computational-psychiatry/">Computational Psychiatry</a></li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/data-science/">Data Science</a></li>
 		</ul>
 	</div>
@@ -209,8 +211,11 @@ conda activate tf-gpu
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/bayesian/" title="Bayesian">Bayesian</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/decision-making/" title="Decision Making">Decision Making</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/deep-learning/" title="Deep Learning">Deep Learning</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/machine-learning/" title="Machine Learning">Machine Learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/modelling/" title="Modelling">Modelling</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/reinforcement-learning/" title="Reinforcement Learning">Reinforcement Learning</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/research-design/" title="Research Design">Research Design</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%AD%E6%96%87/" title="中文">中文</a>

@@ -6,7 +6,17 @@
     <description>Recent content on Brain and Machine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install HDDM 0.9 package(2022.07)</title>
+      <link>https://wenting-wang.github.io/docs/install-hddm/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/docs/install-hddm/</guid>
+      <description>HDDM is a python toolbox for hierarchical Bayesian parameter estimation of the Drift Diffusion Model (via PyMC). Drift Diffusion Models are used widely in psychology and cognitive neuroscience to study decision making.(https://github.com/hddm-devs/hddm)
+How to install HDDM Create conda environment and activate it conda create --name hdmm-0.9 python=3.9 conda activate hdmm-0.9 PS. If you want to set the environment as default, go to ~/.zshrc or ~/.bashrc and add this line: conda activate hddm-0.</description>
+    </item>
+    
     <item>
       <title>状态价值函数与动作价值函数</title>
       <link>https://wenting-wang.github.io/docs/rl-01/</link>
@@ -58,8 +68,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wenting-wang.github.io/about/</guid>
-      <description>Hi there, I am Wenting Wang 王文婷. I am a master student in the Graduate School of Neural Information Processing at the University Tuebingen, meanwhile working as a research assistant at MPI Cybernetics and Tuebingen Hospital.
-My research focuses on mechanisms on brain functions and dysfunctions - from computational neuroscience perspectives. I use decision making and neuroimaging data, and reinforcement learning to model the process. I am passionate about broad questions in cognitive and neuroscience, improvisational music(flute, guitar) and travel around.</description>
+      <description>Hi there, I am Wenting Wang 王文婷. I am working as a research assistant at MPI Biological Cybernetics and Tuebingen Hospital Dept. Psychiatry, meanwhile studying in the graduate school of Neural Information Processing at the University Tuebingen.
+My research focuses on mechanisms on brain functions and dysfunctions - from computational neuroscience perspectives. I use bayesian and reinforcement learning methods to model the information processing in the brains, with decision making and neuroimaging data.</description>
     </item>
     
   </channel>

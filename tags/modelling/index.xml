@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modelling on Brain and Machine</title>
+    <link>https://wenting-wang.github.io/tags/modelling/</link>
+    <description>Recent content in Modelling on Brain and Machine</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/tags/modelling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install HDDM 0.9 package(2022.07)</title>
+      <link>https://wenting-wang.github.io/docs/install-hddm/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/docs/install-hddm/</guid>
+      <description>HDDM is a python toolbox for hierarchical Bayesian parameter estimation of the Drift Diffusion Model (via PyMC). Drift Diffusion Models are used widely in psychology and cognitive neuroscience to study decision making.(https://github.com/hddm-devs/hddm)
+How to install HDDM Create conda environment and activate it conda create --name hdmm-0.9 python=3.9 conda activate hdmm-0.9 PS. If you want to set the environment as default, go to ~/.zshrc or ~/.bashrc and add this line: conda activate hddm-0.</description>
+    </item>
+    
+  </channel>
+</rss>

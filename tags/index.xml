@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Brain and Machine</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://wenting-wang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bayesian</title>
+      <link>https://wenting-wang.github.io/tags/bayesian/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/tags/bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Decision Making</title>
+      <link>https://wenting-wang.github.io/tags/decision-making/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/tags/decision-making/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelling</title>
+      <link>https://wenting-wang.github.io/tags/modelling/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wenting-wang.github.io/tags/modelling/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Reinforcement Learning</title>
       <link>https://wenting-wang.github.io/tags/reinforcement-learning/</link>

@@ -4,15 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>状态价值函数与动作价值函数 - Brain and Machine</title>
+	<title>Install HDDM 0.9 package(2022.07) - Brain and Machine</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="状态价值函数与动作价值函数" />
-<meta property="og:description" content="强化学习（Reinforcement Learning）中的状态价值函数（State-value function）和动作价值函数（Action-value function）的关系。" />
+		<meta property="og:title" content="Install HDDM 0.9 package(2022.07)" />
+<meta property="og:description" content="HDDM is a python toolbox for hierarchical Bayesian parameter estimation of the Drift Diffusion Model (via PyMC). Drift Diffusion Models are used widely in psychology and cognitive neuroscience to study decision making.(https://github.com/hddm-devs/hddm)
+How to install HDDM Create conda environment and activate it conda create --name hdmm-0.9 python=3.9 conda activate hdmm-0.9 PS. If you want to set the environment as default, go to ~/.zshrc or ~/.bashrc and add this line: conda activate hddm-0." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wenting-wang.github.io/docs/rl-01/" /><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2022-06-13T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-06-13T00:00:00+00:00" />
+<meta property="og:url" content="https://wenting-wang.github.io/docs/install-hddm/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-07-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-10T00:00:00+00:00" />
 
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,28 +81,57 @@ MathJax.Hub.Config({
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">状态价值函数与动作价值函数</h1>
+			<h1 class="post__title">Install HDDM 0.9 package(2022.07)</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-06-13T00:00:00Z">June 13, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/data-science/" rel="category">Data Science</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-07-10T00:00:00Z">July 10, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/computational-psychiatry/" rel="category">Computational Psychiatry</a>
 	</span>
 </div></div>
 		</header>
 		<div class="content post__content clearfix">
-			<p>强化学习（Reinforcement Learning）中的状态价值函数（State-value function）和动作价值函数（Action-value function）的关系。</p>
-<h2 id="状态价值函数">状态价值函数</h2>
-<p>状态价值函数（$V_{\pi}(s)$ ），state-value function，即根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$）。回报为所有未来奖励（$R_k$）折现到$t$时刻的总和。按照指数递减，近期的折得少，未来的折得大，遥远未来的基本忽略不计。$\gamma$为折扣因子。</p>
-<p>$$ V_{\pi}(s) = E[G_t | S_t = s]$$</p>
-<p>$$ G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + &hellip;$$</p>
-<h2 id="动作价值函数">动作价值函数</h2>
-<p>动作价值函数（$Q_{\pi}(s,a)$ ），action-value function，即agent选择了动作$a$，再继续采用策略$\pi$，根据策略（$\pi$），在时刻$t$，某个状态（$s$）的期望回报（$G_t$）。</p>
-<p>$$ Q_{\pi}(s,a) = E[G_t | S_t = s, A_t = a]$$</p>
-<h2 id="图示两个价值函数之间的关系">图示两个价值函数之间的关系</h2>
-<p>不管是哪种价值函数，都表示了所有可能的未来可以获得的平均价值。agent可以在当下知道某个策略的平均价值，根据价值调整自己的动作，而不必等到游戏结束才知道奖励结果。在同一个状态可能有多种选择（policy function $\pi(a|s)$ is stochastic），如左转还是右转。即便做出了选择，也可能进入不同的新的状态（dynamic function $p(s^\prime, r | s, a)$ is also stochastic），如左转后，有可能遇上红灯，也可能是绿灯。而所有的随机因素，都被囊括在了价值函数中，为agent当下的决策提供参考。</p>
-<p>对于每一个动作，状态价值函数存储了该动作之后的所有可能的状态的价值。即把下一步的状态价值缓存进对应的动作价值中。</p>
-<p><img src="/img/v_n_q.png" alt="v_n_q"></p>
-<p>$$ \pi_<em>(s) = \argmax_a q_</em>(s,a) $$.</p>
-<p>对于最优价值函数，有以上关系，大大简化了运算。</p>
+			<blockquote>
+<p>HDDM is a python toolbox for hierarchical Bayesian parameter estimation of the Drift Diffusion Model (via PyMC). Drift Diffusion Models are used widely in psychology and cognitive neuroscience to study decision making.(<a href="https://github.com/hddm-devs/hddm">https://github.com/hddm-devs/hddm</a>)</p>
+</blockquote>
+<h2 id="how-to-install-hddm">How to install HDDM</h2>
+<ol>
+<li>Create conda environment and activate it</li>
+</ol>
+<pre tabindex="0"><code>conda create --name hdmm-0.9 python=3.9
+conda activate hdmm-0.9
+</code></pre><p>PS. If you want to set the environment as default, go to <code>~/.zshrc</code> or <code>~/.bashrc</code> and add this line: <code>conda activate hddm-0.9</code>.</p>
+<p>PSS. To remove any environment, go back to base environment <code>conda activate base</code>, then remove what you want by <code>conda env remove -n hdmm-0.9</code>.</p>
+<ol start="2">
+<li>Install package using <strong>conda</strong>(do not use pip, incompatibile issues!)</li>
+</ol>
+<pre tabindex="0"><code>conda install cython
+conda install pymc==2.3.8
+conda install git pip
+pip install git+https://github.com/hddm-devs/kabuki
+pip install git+https://github.com/hddm-devs/hddm
+# Optional
+conda install torch torchvision torchaudio --&gt;
+</code></pre><ol start="3">
+<li>Test if HDDM successfully installed</li>
+</ol>
+<p>Test the codes below in a python script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> hddm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load data from csv file into a NumPy structured array</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> hddm<span style="color:#f92672">.</span>load_csv(<span style="color:#e6db74">&#39;simple_difficulty.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a HDDM model multi object</span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> hddm<span style="color:#f92672">.</span>HDDM(data, depends_on<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;v&#39;</span>:<span style="color:#e6db74">&#39;difficulty&#39;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create model and start MCMC sampling</span>
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>sample(<span style="color:#ae81ff">2000</span>, burn<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print fitted parameters and other model statistics</span>
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>print_stats()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Plot posterior distributions and theoretical RT distributions</span>
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>plot_posteriors()
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>plot_posterior_predictive()
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
@@ -109,10 +139,13 @@ MathJax.Hub.Config({
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/reinforcement-learning/" rel="tag">Reinforcement Learning</a>
+			<a class="tags__link btn" href="/tags/modelling/" rel="tag">Modelling</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/%E4%B8%AD%E6%96%87/" rel="tag">中文</a>
+			<a class="tags__link btn" href="/tags/decision-making/" rel="tag">Decision Making</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bayesian/" rel="tag">Bayesian</a>
 		</li>
 	</ul>
 </div>
@@ -123,15 +156,9 @@ MathJax.Hub.Config({
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/docs/causal-inference-social-science/" rel="prev">
+		<a class="pager__link" href="/docs/rl-01/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">社会科学研究中的因果推断</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/docs/install-hddm/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">Install HDDM 0.9 package(2022.07)</p>
+			<p class="pager__title">状态价值函数与动作价值函数</p>
 		</a>
 	</div>
 </nav>
