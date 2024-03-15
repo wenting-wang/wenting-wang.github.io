@@ -6,8 +6,15 @@
     <description>Recent content in 王文婷 on Wenting Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://wenting-wang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从几何上重新理解马尔科夫链</title>
+      <link>https://wenting-wang.github.io/post/2024/03/15/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2024/03/15/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/</guid>
+      <description>问题描述 状态沿着马尔可夫链（Markov chain）按照一定概率规则（转移矩阵）转移，下一步往哪转怎么转只当前状态有关，和之前无关。某一条链：&#xA;$$S_1 \rightarrow S_2 \rightarrow S_2 \rightarrow S_1 \rightarrow &amp;hellip;$$&#xA;一段时间后，经过$S_1$和$S_2$的频率（或概率）是多少呢？和转移依据的规则肯定有关系，那是啥关系？每条连经过两个状态的比例都相同吗？&#xA;算一算 状态向量（state vector）为一个概率向量（state vector）， 如：&#xA;$$\mathbf{w} = \begin{bmatrix} w_1 \ w_2\end{bmatrix}= \begin{bmatrix} 0.9 \ 0.1\end{bmatrix}$$&#xA;表示此时在状态$S_1$的概率为0.9，在状态$S_2$的概率为0.1。&#xA;转移矩阵（transition matrix）是一个随机矩阵（stochastic matrix）：&#xA;$$P = \begin{bmatrix} p_{11} &amp;amp; p_{21}\ p_{12} &amp;amp; p_{22} \end{bmatrix}=\begin{bmatrix} 0.8 &amp;amp; 0.6\ 0.2 &amp;amp; 0.4 \end{bmatrix}$$&#xA;$p_{ij}$表示从状态$S_i$到状态$S_j$的转移概率。&#xA;从任意一个向量出发，经过多次线性变换（linear transformation），如果转移矩阵是正则的（regular），总会收敛到一个平稳状态向量（steady-state vector）：&#xA;$$\mathbf{w} \leftarrow P\mathbf{w} = \begin{bmatrix} 0.8 &amp;amp; 0.6\ 0.2 &amp;amp; 0.4 \end{bmatrix} \begin{bmatrix} 0.9 \ 0.1 \end{bmatrix}=\begin{bmatrix} 0.</description>
+    </item>
     <item>
       <title>植物中的递归</title>
       <link>https://wenting-wang.github.io/post/2024/03/11/%E6%A4%8D%E7%89%A9%E4%B8%AD%E7%9A%84%E9%80%92%E5%BD%92/</link>
