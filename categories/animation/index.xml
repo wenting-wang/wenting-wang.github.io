@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Animation on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/animation/</link>
+    <description>Recent content in Animation on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/animation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blender几何节点建模细胞</title>
+      <link>https://wenting-wang.github.io/note/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/note/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</guid>
+      <description>Blender几何节点（Geometry nodes）实在是神奇。学着建了个细胞模型。之后想用来建模植物生长和随机过程。&#xA;参考资料</description>
+    </item>
+  </channel>
+</rss>
