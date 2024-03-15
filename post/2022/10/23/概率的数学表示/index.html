@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>概率的数学表示 | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">概率的数学表示</span></h1>
+
+<h2 class="date">2022/10/23</h2>
+</div>
+
+<main>
+<p>假设<code>$X$</code>是一个随机变量（random variable）， <code>$x$</code>是它的一个实现（realisation）。</p>
+<p><code>$Θ$</code>是另一个随机变量，<code>$\theta$</code>是它的一个实现。</p>
+<p><code>$\beta$</code>是个常数。</p>
+<ol>
+<li>Density function 密度函数 <code>$P(X=x;\beta)$</code></li>
+</ol>
+<p>参数为<code>$\beta$</code>时，<code>$x$</code>出现的概率。这里的<code>$\beta$</code>是一个特定的值，比如3.14（注意，<code>$\beta$</code>可能已知也可能未知，但它是一个值，不是一个分布的某个实现）。</p>
+<ol start="2">
+<li>Conditional probability 条件概率 <code>$P(X=x|\Theta=\theta)=P(x|\theta)$</code></li>
+</ol>
+<p>随机变量<code>$\Theta$</code>为<code>$\theta$</code>时，在这一条件下，<code>$x$</code>出现的概率。随机变量<code>$\Theta$</code>是不确定的，服从某个概率分布，这里<code>$\theta$</code>是<code>$\Theta$</code>的一个实现。</p>
+<ol start="3">
+<li>Joint probability 联合概率 <code>$P(X=x,\Theta=\theta)=P(x,\theta)$</code></li>
+</ol>
+<p>随机变量<code>$\Theta$</code>为<code>$\theta$</code>时且随机变量<code>$X$</code>为<code>$x$</code>时的概率。</p>
+
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

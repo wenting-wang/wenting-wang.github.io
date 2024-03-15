@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>王文婷 on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/</link>
+    <description>Recent content in 王文婷 on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>植物中的递归</title>
+      <link>https://wenting-wang.github.io/post/2024/03/11/%E6%A4%8D%E7%89%A9%E4%B8%AD%E7%9A%84%E9%80%92%E5%BD%92/</link>
+      <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2024/03/11/%E6%A4%8D%E7%89%A9%E4%B8%AD%E7%9A%84%E9%80%92%E5%BD%92/</guid>
+      <description>道法自然。</description>
+    </item>
+    <item>
+      <title>Cache history of mutable dictionary</title>
+      <link>https://wenting-wang.github.io/post/2023/09/05/cache-history-of-mutable-dictionary/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2023/09/05/cache-history-of-mutable-dictionary/</guid>
+      <description>The Python dictionary type is mutable, meaning that it can be modified after it is created. In the case below, a dictionary d is added to a cache list, and any changes made to d result in updates to both the old and new d entries in the cache.&#xA;d = {0: 0} cache = [] cache.append(d) print(cache) # [{0: 0}] d[0] = 1 cache.append(d) print(cache) # [{0: 1}, {0: 1}] An alternative approach, aside from using collections.</description>
+    </item>
+    <item>
+      <title>Dijkstan算法</title>
+      <link>https://wenting-wang.github.io/post/2023/08/27/dijkstan%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2023/08/27/dijkstan%E7%AE%97%E6%B3%95/</guid>
+      <description>一根扯紧的绳子，每一段都应该是扯紧的。&#xA;两点之间的最短路径，其中每一段都应该是最短的。例如，A-X-Z是最短路径(AX:1, XZ:1, AZ:3)。A到X是最短的；A经过X再到Z是所有起点为A终点为Z中最短的（比A到Z短）；X到Z是最短的。&#xA;用Dynamic Programming的思想求解，从局部最优开始搜索优化。&#xA;代码实现：&#xA;# the shortest path def dijkstan(nodes, edges, source_index=0): &amp;quot;&amp;quot;&amp;quot; nodes (list): list of nodes edges (dict): {(node, node): distance} source_index (int, optional): souce node return (dict): the shortest distance from source &amp;quot;&amp;quot;&amp;quot; path_length = {v: float(&#39;inf&#39;) for v in nodes} path_length[source_index] = 0 adjacent_nodes = {v: {} for v in nodes} for (u, v), w_uv in edges.items(): adjacent_nodes[u][v] = w_uv adjacent_nodes[v][u] = w_uv temporary_nodes = [v for v in nodes] while len(temporary_nodes) &amp;gt; 0: upper_bound = {v: path_length[v] for v in temporary_nodes} u = min(upper_bound, key=upper_bound.</description>
+    </item>
+    <item>
+      <title>菜谱 | 四川泡菜</title>
+      <link>https://wenting-wang.github.io/post/2023/08/23/%E8%8F%9C%E8%B0%B1-%E5%9B%9B%E5%B7%9D%E6%B3%A1%E8%8F%9C/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2023/08/23/%E8%8F%9C%E8%B0%B1-%E5%9B%9B%E5%B7%9D%E6%B3%A1%E8%8F%9C/</guid>
+      <description>腌冬菜、黄芽菜，淡则味鲜，咸则味恶。然欲久放，则非盐不可。常腌一大坛，三伏时开之，上半截虽臭、烂，而下次半截香美异常，色白如玉。甚矣！相士之不可但观皮毛也。&#xA;—— 随园食单 清 袁枚</description>
+    </item>
+    <item>
+      <title>Create a blog with Hugo and Github</title>
+      <link>https://wenting-wang.github.io/post/2023/08/22/create-a-blog-with-hugo-and-github/</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2023/08/22/create-a-blog-with-hugo-and-github/</guid>
+      <description>home brew install hugo&#xA;create two repos&#xA;create repo blog and repo wenting-wang.github.io&#xA;notice: make sure it is [name].github.io&#xA;clone both repos to home dir make an init commit&#xA;cd wenting-wang.github.io git checkout -b main touch README.md git add . git commit -m &amp;quot;init&amp;quot; git push origin main create new site cd blog hugo new site wenting-wang-blog add submodule cd blog/wenting-wang-blog git submodule add -b main https://github.com/wenting-wang/wenting-wang.github.io.git public debug if it does not work</description>
+    </item>
+    <item>
+      <title>TD Learning model simulation</title>
+      <link>https://wenting-wang.github.io/post/2022/11/11/td-learning-model-simulation/</link>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/11/11/td-learning-model-simulation/</guid>
+      <description>Through Temporal Difference (TD) learning, an agent learns from future rewards and back-propagates prediction errors by updating value estimates. Basically, the agent is continually updating beliefs about future rewards as it approaches the future. It is the core concept of model-free reinforcement learning.&#xA;Variables Conditioned stimulus: $ u \in \{ 0,1 \} $.&#xA;Unconditioned stimulus: $ r\in \{ 0,1 \} $.&#xA;The linear filter used to build convolutional kernel: $ w\in \mathbb{R} $.</description>
+    </item>
+    <item>
+      <title>Rescorla–Wagner model simulation</title>
+      <link>https://wenting-wang.github.io/post/2022/11/03/rescorlawagner-model-simulation/</link>
+      <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/11/03/rescorlawagner-model-simulation/</guid>
+      <description>&lt;p&gt;The Rescorla-Wagner model captures key aspects of classical conditioning(Pavlovian experiment). It is based on a simple linear equation that predicts the reward associated with a stimulus.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>笔记 | 计算精神病学常见研究范式</title>
+      <link>https://wenting-wang.github.io/post/2022/11/03/%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E7%B2%BE%E7%A5%9E%E7%97%85%E5%AD%A6%E5%B8%B8%E8%A7%81%E7%A0%94%E7%A9%B6%E8%8C%83%E5%BC%8F/</link>
+      <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/11/03/%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E7%B2%BE%E7%A5%9E%E7%97%85%E5%AD%A6%E5%B8%B8%E8%A7%81%E7%A0%94%E7%A9%B6%E8%8C%83%E5%BC%8F/</guid>
+      <description>计算精神病学领域较常见的三类研究范式总结。&#xA;数据驱动 Data-driven method 多为判别模型。考察数据结构特点或变量之间的相关性。临床应用常见于诊断分类、治疗方案选择、治疗效果预测、基于症状的疾病分类等。常用模型：LR, SVD, RF, etc.&#xA;数据量大且维度高（基因、影像、行为），方便做分类，但是难免维度诅咒过拟合。&#xA;理论驱动 Theory-driven method 多为生成模型。考察数据的分布和生成过程。用物理和数学等计算模型，从分子、神经环路、行为等层次，定量描述、分析、解释精神和认知异常的机制。三个大类：&#xA;生物物理模型。药物/神经递质/受体etc.如何调控/影响神经环路活动或行为。e.g. 精神分裂，抑制型中间神经元的NMDA受体密度降低，attractor states对输入信号的扰动的敏感性变弱。&#xA;算法模型。强化学习，隐马尔科夫，高斯过程，POMDP，etc.。价值/策略优化且与环境交互的学习过程，如何导致异常行为。e.g. 不受控的环境引起习得性无助；抑郁对奖励价值的敏感性降低；药物成瘾，依赖习惯性的（model-free）多于按计划（model-based）决策。&#xA;贝叶斯模型。针对要优化的问题本身。病理性相关的三种可能：正确地解决了错误的问题（酒瘾者过分关注饮酒）；或问题找到了，解决方式错了（借酒消愁）；或问题和解决方式都对，但是受限于经验或环境。e.g. 恐惧的消除来自重新学习其无害，而非回避或遗忘。&#xA;理论驱动三种范式分别对应Marr框架下认知的信息处理功能的三层：implementation, algorithm, computation。但没有绝对的分界。&#xA;也有研究综合以上两者。理论驱动用来降维数据，再嵌入数据驱动模型。&#xA;参考文献 Huys, Quentin JM, Tiago V. Maia, and Michael J. Frank. &amp;ldquo;Computational psychiatry as a bridge from neuroscience to clinical applications.&amp;rdquo; Nature neuroscience 19.3 (2016): 404-413.</description>
+    </item>
+    <item>
+      <title>概率的数学表示</title>
+      <link>https://wenting-wang.github.io/post/2022/10/23/%E6%A6%82%E7%8E%87%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA/</link>
+      <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/10/23/%E6%A6%82%E7%8E%87%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA/</guid>
+      <description>假设$X$是一个随机变量（random variable）， $x$是它的一个实现（realisation）。&#xA;$Θ$是另一个随机变量，$\theta$是它的一个实现。&#xA;$\beta$是个常数。&#xA;Density function 密度函数 $P(X=x;\beta)$ 参数为$\beta$时，$x$出现的概率。这里的$\beta$是一个特定的值，比如3.14（注意，$\beta$可能已知也可能未知，但它是一个值，不是一个分布的某个实现）。&#xA;Conditional probability 条件概率 $P(X=x|\Theta=\theta)=P(x|\theta)$ 随机变量$\Theta$为$\theta$时，在这一条件下，$x$出现的概率。随机变量$\Theta$是不确定的，服从某个概率分布，这里$\theta$是$\Theta$的一个实现。&#xA;Joint probability 联合概率 $P(X=x,\Theta=\theta)=P(x,\theta)$ 随机变量$\Theta$为$\theta$时且随机变量$X$为$x$时的概率。</description>
+    </item>
+    <item>
+      <title>缺失值的处理</title>
+      <link>https://wenting-wang.github.io/post/2022/10/23/%E7%BC%BA%E5%A4%B1%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/10/23/%E7%BC%BA%E5%A4%B1%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <description>缺失值处理有时候甚至比机器学习模型本身更重要，因为数据质量决定了预测精度上限，而模型只是去逼近这个上限。&#xA;但是Missing Data Imputation是个很大的问题，具体情况具体分析，很难一概而论。涉及行业背景、特征间的关系、数据缺失的原因（随机缺失；非随机缺失；完全随机缺失，即只有一部分是可以通过统计方法处理的，另一些只能靠重新采集数据）、缺失值处理方法（少的话直接删掉，或者简单填充，连续数用均值，离散数用众数，也可以建模用统计或机器学习方法填充，也可以不用管，有的模型如XGBoost会自动处理缺失值，对流数据处理方法又有不同），还有其他诸多因素。&#xA;一些参考文献和包：&#xA;文献 很全面的综述，对于分类问题怎么处理缺失值：García-Laencina, Pedro J., José-Luis Sancho-Gómez, and Aníbal R. Figueiras-Vidal. &amp;ldquo;Pattern classification with missing data: a review.&amp;rdquo; Neural Computing and Applications 19.2 (2010): 263-282.&#xA;随机森林分类问题下缺失值的处理：Overcoming Missing Values in A Random Forest Classifier, By Alok, GUPTA&#xA;简单介绍特征工程（缺失值处理可以看做特征工程的一部分）：Discover Feature Engineering, How to Engineer Features and How to Get Good at It&#xA;常用工具包 fancyimpute (https://github.com/iskandr/fancyimpute)&#xA;multiple-imputation (http://www.stefvanbuuren.nl/mi/index.html)</description>
+    </item>
+    <item>
+      <title>Install HDDM 0.9 package</title>
+      <link>https://wenting-wang.github.io/post/2022/07/10/install-hddm-0.9-package/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/07/10/install-hddm-0.9-package/</guid>
+      <description>HDDM(Hierachical Drift Diffusion Model) is a python toolbox for hierarchical Bayesian parameter estimation of the Drift Diffusion Model (via PyMC), which is used widely in psychology and cognitive neuroscience to simulate the decision making process.&#xA;How to install HDDM via Conda Create conda environment and activate it conda create --name hdmm-0.9 python=3.9 conda activate hdmm-0.9 PS. If you want to set the environment as default, go to ~/.zshrc or ~/.bashrc and add this line: conda activate hddm-0.</description>
+    </item>
+    <item>
+      <title>社会科学研究中的因果推断</title>
+      <link>https://wenting-wang.github.io/post/2022/03/04/causal-inference-social-science/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/03/04/causal-inference-social-science/</guid>
+      <description>&lt;p&gt;相关性不能说明因果。几乎完全依赖于观察，很少做对照实验的社会科学，又怎么度量因果呢？关键在处理混杂因素（Confounder）。这里稍作整理，粗略梳理了一下社会科学中因果推断（Causal Inference）的常用方法，再附上一些实例：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>深度学习工作站搭建记录 - 3/3 环境篇</title>
+      <link>https://wenting-wang.github.io/post/2019/06/30/dl-workstation-3/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2019/06/30/dl-workstation-3/</guid>
+      <description>&lt;p&gt;安装记录：Nvidia Driver + CUDA + cuDNN + Anaconda + Tensorflow GPU  + PyCharm。至今摸索出的最快捷的方法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>深度学习工作站搭建记录 - 2/3 系统篇</title>
+      <link>https://wenting-wang.github.io/post/2019/06/29/dl-workstation-2/</link>
+      <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2019/06/29/dl-workstation-2/</guid>
+      <description>&lt;p&gt;烧个双系统（Windows 10 + Ubuntu 18.04.2 LTS）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>深度学习工作站搭建记录 - 1/3 硬件篇</title>
+      <link>https://wenting-wang.github.io/post/2019/06/21/dl-workstation-1/</link>
+      <pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2019/06/21/dl-workstation-1/</guid>
+      <description>&lt;p&gt;记录下搭建过程，给需要的朋友或者以后作参考。坐标德国，Altenate上入手的大部分，eBay淘的二手机箱。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://wenting-wang.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/about/</guid>
+      <description>王文婷 Wenting Wang I am currently working as a PhD student at the Max Planck Institute for Biological Cybernetics (Peter Dayan Lab) and University Hospital Tübingen (Tobias Kaufmann Lab), meanwhile studying Computational Neuroscience at the GTC of University Tuebingen.&#xA;My research focuses on understanding mechanisms of brain functions and dysfunctions - from Computational Psychiatry and Decision Making perspectives. I use Bayesian and reinforcement learning methods(under the POMDP framework) to model the neural information processing with large-scale behavioural, neuroimaging(MRI, task-based fMRI) and phenotype data.</description>
+    </item>
+  </channel>
+</rss>

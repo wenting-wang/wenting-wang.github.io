@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computational Psychiatry on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/computational-psychiatry/</link>
+    <description>Recent content in Computational Psychiatry on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/computational-psychiatry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TD Learning model simulation</title>
+      <link>https://wenting-wang.github.io/post/2022/11/11/td-learning-model-simulation/</link>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/11/11/td-learning-model-simulation/</guid>
+      <description>Through Temporal Difference (TD) learning, an agent learns from future rewards and back-propagates prediction errors by updating value estimates. Basically, the agent is continually updating beliefs about future rewards as it approaches the future. It is the core concept of model-free reinforcement learning.&#xA;Variables Conditioned stimulus: $ u \in \{ 0,1 \} $.&#xA;Unconditioned stimulus: $ r\in \{ 0,1 \} $.&#xA;The linear filter used to build convolutional kernel: $ w\in \mathbb{R} $.</description>
+    </item>
+    <item>
+      <title>Rescorla–Wagner model simulation</title>
+      <link>https://wenting-wang.github.io/post/2022/11/03/rescorlawagner-model-simulation/</link>
+      <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/11/03/rescorlawagner-model-simulation/</guid>
+      <description>&lt;p&gt;The Rescorla-Wagner model captures key aspects of classical conditioning(Pavlovian experiment). It is based on a simple linear equation that predicts the reward associated with a stimulus.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>笔记 | 计算精神病学常见研究范式</title>
+      <link>https://wenting-wang.github.io/post/2022/11/03/%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E7%B2%BE%E7%A5%9E%E7%97%85%E5%AD%A6%E5%B8%B8%E8%A7%81%E7%A0%94%E7%A9%B6%E8%8C%83%E5%BC%8F/</link>
+      <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/11/03/%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E7%B2%BE%E7%A5%9E%E7%97%85%E5%AD%A6%E5%B8%B8%E8%A7%81%E7%A0%94%E7%A9%B6%E8%8C%83%E5%BC%8F/</guid>
+      <description>计算精神病学领域较常见的三类研究范式总结。&#xA;数据驱动 Data-driven method 多为判别模型。考察数据结构特点或变量之间的相关性。临床应用常见于诊断分类、治疗方案选择、治疗效果预测、基于症状的疾病分类等。常用模型：LR, SVD, RF, etc.&#xA;数据量大且维度高（基因、影像、行为），方便做分类，但是难免维度诅咒过拟合。&#xA;理论驱动 Theory-driven method 多为生成模型。考察数据的分布和生成过程。用物理和数学等计算模型，从分子、神经环路、行为等层次，定量描述、分析、解释精神和认知异常的机制。三个大类：&#xA;生物物理模型。药物/神经递质/受体etc.如何调控/影响神经环路活动或行为。e.g. 精神分裂，抑制型中间神经元的NMDA受体密度降低，attractor states对输入信号的扰动的敏感性变弱。&#xA;算法模型。强化学习，隐马尔科夫，高斯过程，POMDP，etc.。价值/策略优化且与环境交互的学习过程，如何导致异常行为。e.g. 不受控的环境引起习得性无助；抑郁对奖励价值的敏感性降低；药物成瘾，依赖习惯性的（model-free）多于按计划（model-based）决策。&#xA;贝叶斯模型。针对要优化的问题本身。病理性相关的三种可能：正确地解决了错误的问题（酒瘾者过分关注饮酒）；或问题找到了，解决方式错了（借酒消愁）；或问题和解决方式都对，但是受限于经验或环境。e.g. 恐惧的消除来自重新学习其无害，而非回避或遗忘。&#xA;理论驱动三种范式分别对应Marr框架下认知的信息处理功能的三层：implementation, algorithm, computation。但没有绝对的分界。&#xA;也有研究综合以上两者。理论驱动用来降维数据，再嵌入数据驱动模型。&#xA;参考文献 Huys, Quentin JM, Tiago V. Maia, and Michael J. Frank. &amp;ldquo;Computational psychiatry as a bridge from neuroscience to clinical applications.&amp;rdquo; Nature neuroscience 19.3 (2016): 404-413.</description>
+    </item>
+  </channel>
+</rss>

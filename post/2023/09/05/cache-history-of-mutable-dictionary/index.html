@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cache history of mutable dictionary | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Cache history of mutable dictionary</span></h1>
+
+<h2 class="date">2023/09/05</h2>
+</div>
+
+<main>
+<p>The Python dictionary type is mutable, meaning that it can be modified after it is created. In the case below, a dictionary d is added to a cache list, and any changes made to d result in updates to both the old and new d entries in the cache.</p>
+<pre><code class="language-python">d = {0: 0}
+cache = []
+cache.append(d)
+print(cache) # [{0: 0}]
+
+d[0] = 1
+cache.append(d)
+print(cache) # [{0: 1}, {0: 1}]
+</code></pre>
+<p>An alternative approach, aside from using <a href="https://docs.python.org/3/library/collections.html#collections.namedtuple">collections.namedtuple</a> or a <a href="https://docs.python.org/3/library/types.html">types.MappingProxyType</a>, is to bypass the dictionary and store items directly in the cache.</p>
+<pre><code class="language-python">cache = {t: None for t in range(2)}
+cache[0] = {0:0}
+print(cache) # {0: {0: 0}, 1: None}
+
+cache[1] = {0:1}
+print(cache) # {0: {0: 1}, 1: {0: 1}}
+</code></pre>
+
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>笔记 | 计算精神病学常见研究范式 | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">笔记 | 计算精神病学常见研究范式</span></h1>
+
+<h2 class="date">2022/11/03</h2>
+</div>
+
+<main>
+<p>计算精神病学领域较常见的三类研究范式总结。</p>
+<h2 id="数据驱动-data-driven-method">数据驱动 Data-driven method</h2>
+<p>多为判别模型。考察数据结构特点或变量之间的相关性。临床应用常见于诊断分类、治疗方案选择、治疗效果预测、基于症状的疾病分类等。常用模型：LR, SVD, RF, etc.</p>
+<p>数据量大且维度高（基因、影像、行为），方便做分类，但是难免维度诅咒过拟合。</p>
+<h2 id="理论驱动-theory-driven-method">理论驱动 Theory-driven method</h2>
+<p>多为生成模型。考察数据的分布和生成过程。用物理和数学等计算模型，从分子、神经环路、行为等层次，定量描述、分析、解释精神和认知异常的机制。三个大类：</p>
+<ol>
+<li>
+<p>生物物理模型。药物/神经递质/受体etc.如何调控/影响神经环路活动或行为。e.g. 精神分裂，抑制型中间神经元的NMDA受体密度降低，attractor states对输入信号的扰动的敏感性变弱。</p>
+</li>
+<li>
+<p>算法模型。强化学习，隐马尔科夫，高斯过程，POMDP，etc.。价值/策略优化且与环境交互的学习过程，如何导致异常行为。e.g. 不受控的环境引起习得性无助；抑郁对奖励价值的敏感性降低；药物成瘾，依赖习惯性的（model-free）多于按计划（model-based）决策。</p>
+</li>
+<li>
+<p>贝叶斯模型。针对要优化的问题本身。病理性相关的三种可能：正确地解决了错误的问题（酒瘾者过分关注饮酒）；或问题找到了，解决方式错了（借酒消愁）；或问题和解决方式都对，但是受限于经验或环境。e.g. 恐惧的消除来自重新学习其无害，而非回避或遗忘。</p>
+</li>
+</ol>
+<p>理论驱动三种范式分别对应Marr框架下认知的信息处理功能的三层：implementation, algorithm, computation。但没有绝对的分界。</p>
+<p>也有研究综合以上两者。理论驱动用来降维数据，再嵌入数据驱动模型。</p>
+<h2 id="参考文献">参考文献</h2>
+<p>Huys, Quentin JM, Tiago V. Maia, and Michael J. Frank. &ldquo;Computational psychiatry as a bridge from neuroscience to clinical applications.&rdquo; Nature neuroscience 19.3 (2016): 404-413.</p>
+
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

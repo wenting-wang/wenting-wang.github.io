@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create a blog with Hugo and Github | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Create a blog with Hugo and Github</span></h1>
+
+<h2 class="date">2023/08/22</h2>
+</div>
+
+<main>
+<ol>
+<li>
+<p>home brew install hugo</p>
+</li>
+<li>
+<p>create two repos</p>
+</li>
+</ol>
+<p>create repo blog and repo wenting-wang.github.io</p>
+<p>notice: make sure it is [name].github.io</p>
+<ol start="3">
+<li>clone both repos to home dir</li>
+</ol>
+<p>make an init commit</p>
+<pre><code class="language-zsh">cd wenting-wang.github.io
+git checkout -b main
+touch README.md
+git add .
+git commit -m &quot;init&quot;
+git push origin main
+</code></pre>
+<ol start="4">
+<li>create new site</li>
+</ol>
+<pre><code class="language-zsh">cd blog
+hugo new site wenting-wang-blog
+</code></pre>
+<ol start="5">
+<li>add submodule</li>
+</ol>
+<pre><code class="language-zsh">cd blog/wenting-wang-blog
+git submodule add -b main https://github.com/wenting-wang/wenting-wang.github.io.git public
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/20929336/git-submodule-add-a-git-directory-is-found-locally-issue">debug</a> if it does not work</p>
+<ol start="6">
+<li>get a theme</li>
+</ol>
+<pre><code class="language-zsh">cd blog/wenting-wang-blog/themes
+git clone https://github.com/yihui/hugo-xmin.git
+
+# start with the default example
+cp -a ~/blog/wenting-wang-blog/themes/hugo-xmin/exampleSite/. ~/blog/wenting-wang-blog/
+</code></pre>
+<ol start="7">
+<li>edit config file, move/create post to <code>content/post</code>. have a look</li>
+</ol>
+<pre><code class="language-zsh">hugo server
+</code></pre>
+<ol start="8">
+<li>deploy site</li>
+</ol>
+<pre><code class="language-zsh">cd /blog/wenting-wang-blog
+hugo -t hugo-xmin
+cd public
+git add .
+git commit -m &quot;update&quot;
+git push origin main
+</code></pre>
+<ol start="9">
+<li>back-up files</li>
+</ol>
+<pre><code class="language-zsh">cd blog
+git add .
+git commit -m &quot;update&quot;
+git push origin main
+</code></pre>
+<ol start="10">
+<li>you could also use the script for step 8(deploy.sh) and 9(sync.sh) by running</li>
+</ol>
+<pre><code class="language-sh"># cd blog/wenting-wang-blog
+./deploy.sh
+</code></pre>
+<p>and</p>
+<pre><code class="language-sh"># cd blog
+./sync.sh
+</code></pre>
+<p><code>deploy.sh</code>:</p>
+<pre><code class="language-sh">#!/bin/sh
+# path: ~/blog/wenting-wang-blog/deploy.sh
+
+# If a command fails then the deploy stops
+set -e
+
+# Print out commands before executing them
+set -x
+
+printf &quot;\033[0;32mDeploying updates to GitHub...\033[0m\n&quot;
+
+# Build the project.
+hugo -t hugo-xmin
+
+# Go To Public folder
+cd public
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+	msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin main
+
+# Back to the origin folder
+cd ..
+
+# remove the local public folder
+git rm --cached public -rf
+rm -rf public
+
+</code></pre>
+<p><code>sync.sh</code>:</p>
+<pre><code class="language-sh">#!/bin/sh
+# path: ~/blog/sync.sh
+
+# Use:
+# ./sync.sh &quot;commit messages&quot;
+
+# If a command fails then the deploy stops
+set -e
+
+# Print out commands before executing them
+set -x
+
+# printf &quot;\033[0;32mSync blog data to GitHub...\033[0m\n&quot;
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+	msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push
+</code></pre>
+<ol start="11">
+<li>domain</li>
+</ol>
+<p>the default domain is [name].github.io, same as your repo name. e.g. wenting-wang.github.io</p>
+<p>if you have another domain, confirm on the website from where you bought it(e.g. google domain), so as on Github Page</p>
+
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

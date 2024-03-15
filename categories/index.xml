@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/</link>
+    <description>Recent content in Categories on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math</title>
+      <link>https://wenting-wang.github.io/categories/math/</link>
+      <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/math/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://wenting-wang.github.io/categories/python/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://wenting-wang.github.io/categories/algorithm/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>菜谱</title>
+      <link>https://wenting-wang.github.io/categories/%E8%8F%9C%E8%B0%B1/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/%E8%8F%9C%E8%B0%B1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computational Psychiatry</title>
+      <link>https://wenting-wang.github.io/categories/computational-psychiatry/</link>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/computational-psychiatry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Statistics</title>
+      <link>https://wenting-wang.github.io/categories/statistics/</link>
+      <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/statistics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine</title>
+      <link>https://wenting-wang.github.io/categories/machine/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/categories/machine/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/algorithm/</link>
+    <description>Recent content in Algorithm on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dijkstan算法</title>
+      <link>https://wenting-wang.github.io/post/2023/08/27/dijkstan%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2023/08/27/dijkstan%E7%AE%97%E6%B3%95/</guid>
+      <description>一根扯紧的绳子，每一段都应该是扯紧的。&#xA;两点之间的最短路径，其中每一段都应该是最短的。例如，A-X-Z是最短路径(AX:1, XZ:1, AZ:3)。A到X是最短的；A经过X再到Z是所有起点为A终点为Z中最短的（比A到Z短）；X到Z是最短的。&#xA;用Dynamic Programming的思想求解，从局部最优开始搜索优化。&#xA;代码实现：&#xA;# the shortest path def dijkstan(nodes, edges, source_index=0): &amp;quot;&amp;quot;&amp;quot; nodes (list): list of nodes edges (dict): {(node, node): distance} source_index (int, optional): souce node return (dict): the shortest distance from source &amp;quot;&amp;quot;&amp;quot; path_length = {v: float(&#39;inf&#39;) for v in nodes} path_length[source_index] = 0 adjacent_nodes = {v: {} for v in nodes} for (u, v), w_uv in edges.items(): adjacent_nodes[u][v] = w_uv adjacent_nodes[v][u] = w_uv temporary_nodes = [v for v in nodes] while len(temporary_nodes) &amp;gt; 0: upper_bound = {v: path_length[v] for v in temporary_nodes} u = min(upper_bound, key=upper_bound.</description>
+    </item>
+  </channel>
+</rss>

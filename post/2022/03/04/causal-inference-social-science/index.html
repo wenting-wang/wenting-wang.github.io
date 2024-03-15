@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>社会科学研究中的因果推断 | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">社会科学研究中的因果推断</span></h1>
+
+<h2 class="date">2022/03/04</h2>
+</div>
+
+<main>
+<p>相关性不能说明因果。几乎完全依赖于观察，很少做对照实验的社会科学，又怎么度量因果呢？关键在处理混杂因素（Confounder）。这里稍作整理，粗略梳理了一下社会科学中因果推断（Causal Inference）的常用方法，再附上一些实例：</p>
+<ol>
+<li>实验 Experiment</li>
+</ol>
+<p>投资对地区经济发展的影响。随机选择一些地区投资，剩下地区不投资，观察各自经济增长。</p>
+<p>不过社会科学做实验的机会比较少，大多数还是通过观察研究。</p>
+<ol start="2">
+<li>配对 Matching</li>
+</ol>
+<p>研究联合国的介入对和平的影响。19组两两配对的国家，除了一个联合国介入，一个没有，其他情况综合起来（倾向得分）都差不多，比如上次战争持续时间，人口，民族结构，军队大小，民主情况，地理。</p>
+<ol start="3">
+<li>回归 Regression</li>
+</ol>
+<p>这个很多了，配合其他方法，但是要警惕混杂因素和内生性问题。</p>
+<ol start="4">
+<li>面板 Panel</li>
+</ol>
+<p>包括横截面数据和时间序列数据的研究，三者的关键都在处理内生性（误差项和自变量相关）问题，涉及到的方法有Difference-in-difference model, First difference model, Fixed effects model, 基本思想是通过差分消除部分误差项的干扰。</p>
+<p>一个例子：婚姻对男性收入的影响。一些因素会同时影响婚姻和收入，有些和时间有关，比如年龄，社会经济形势，有些和空间有关，比如地区、家庭，当然还有其他个人因素。通过差分尽量减少与时间和空间有关的误差项的干扰（如，同年龄的人比，结果就不受年龄的干扰）。</p>
+<ol start="5">
+<li>断点回归 Regression discontinuity design, RDD</li>
+</ol>
+<p>研究奖学金对毕业后收入的影响。假设入学考试成绩过了50分就拿奖学金，学生毕业工作后，比较那些当年拿奖学金和没拿的人的收入差距。问题是，当年考1分和考100分的人，其收入差距可能还来自本身的进取心、智力、家庭等，所以不能直接比较。所以只考虑48到52分的学生，他们其他情况差不多（没有了混杂因素），拿不拿奖学金可能是出于运气，可以看做随机的。</p>
+<p>RDD又有精确（Sharp RDD）和模糊(Fuzzy RDD)，上面的例子是Sharp RDD。如果是Fuzzy RDD，则考试成绩越高，越有可能拿奖学金，之间是一个概率关系。</p>
+<ol start="6">
+<li>工具变量 Instrument Variable</li>
+</ol>
+<p>一些特殊的“随机的”变量：天气、抽签、生日</p>
+<p>当年英国管理印度各省有两种方式，一是直接管理，建立殖民政府，收税，二是间接管理，王国自治，代其收税。我们想知道，哪种管理更有利于经济发展。初期研究表明直接管理效果更好，后来有人反对，因为直接管理的地区本来资源更丰富，农业更发达。1848至1856年一条新法令实施，只有地区国王死亡且无继承人时，英国才可直接管理该地区。这样，国王死亡作为工具变量，就可以研究管理方式对经济发展的影响。</p>
+<p>但是，不服从指派（Non-compliance）者会出现一些问题。一个例子：服兵役对之后收入的影响。越战时期美国用抽签的方式确定服兵役资格，那么，我们可以直接比较当年服役和没有服役的人现在的收入、健康、政治观点吗？不行。虽然“抽签”作为工具变量确实随机化了，但是抽到“服兵役资格”的人最后不一定真的去服役了，可能体检不合格，可能为了推迟服役去上了大学，也有一些没有抽到服役资格的人自愿服役，这些对收入都会有影响。所以只研究有资格且服役和没资格且不服役的人（服从者Compliers）。</p>
+<ol start="7">
+<li>因果图和因果机理</li>
+</ol>
+<p>另外，因果图（Causal Graph）可以帮助描述变量间的关系，找到混杂因子（Confounder）、中间变量（Mediator）、冲撞点（Collider），无法观测的变量等，再考虑用上述方法处理混杂因素，方便又直观。推荐工具：DAGitty</p>
+<p>其次，一些研究重新回到了探索因果机理（Causal mechanism），而不只局限于研究因果效应（Causal effect）的存在和大小。举个例子，假设，恐袭新闻导致当地民众反对外来移民，我们想要知道这个假设是不是对的，程度大不大，同时，我们也想知道这中间的原理是什么，新闻导致恐慌进而导致反对情绪，还是新闻导致反恐开支增加进而导致反对情绪。重点在分解直接因果和间接因果，间接因果即假设的机理，然而传统方法中介研究Causal mediation analysis(Barron, Kenny 1986)有可能因为受到无法观测变量的干扰，得出错误的结论。近年序列可忽略假设（Sequential ignorability assumption）提出后，再加上Pearl的图，因果分解变得容易不少。</p>
+<h2 id="参考资料">参考资料</h2>
+<p>以下两本书梳理了因果推断在社会科学的发展脉络。前一本重在概念，后一本重在实例，非常值得参考翻阅。</p>
+<p>Morgan, Stephen L., and Christopher Winship. 2015. Counterfactuals and Causal Inference. Methods and Principles for Social Research. 2nd ed. Cambridge: Cambridge University Press.</p>
+<p>Dunning, Thad. 2012. Natural Experiments in the Social Sciences. A Design-Based Approach. Cambridge: Cambridge University Press.</p>
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/statistics/</link>
+    <description>Recent content in Statistics on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>概率的数学表示</title>
+      <link>https://wenting-wang.github.io/post/2022/10/23/%E6%A6%82%E7%8E%87%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA/</link>
+      <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/10/23/%E6%A6%82%E7%8E%87%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E7%A4%BA/</guid>
+      <description>假设$X$是一个随机变量（random variable）， $x$是它的一个实现（realisation）。&#xA;$Θ$是另一个随机变量，$\theta$是它的一个实现。&#xA;$\beta$是个常数。&#xA;Density function 密度函数 $P(X=x;\beta)$ 参数为$\beta$时，$x$出现的概率。这里的$\beta$是一个特定的值，比如3.14（注意，$\beta$可能已知也可能未知，但它是一个值，不是一个分布的某个实现）。&#xA;Conditional probability 条件概率 $P(X=x|\Theta=\theta)=P(x|\theta)$ 随机变量$\Theta$为$\theta$时，在这一条件下，$x$出现的概率。随机变量$\Theta$是不确定的，服从某个概率分布，这里$\theta$是$\Theta$的一个实现。&#xA;Joint probability 联合概率 $P(X=x,\Theta=\theta)=P(x,\theta)$ 随机变量$\Theta$为$\theta$时且随机变量$X$为$x$时的概率。</description>
+    </item>
+    <item>
+      <title>缺失值的处理</title>
+      <link>https://wenting-wang.github.io/post/2022/10/23/%E7%BC%BA%E5%A4%B1%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/10/23/%E7%BC%BA%E5%A4%B1%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <description>缺失值处理有时候甚至比机器学习模型本身更重要，因为数据质量决定了预测精度上限，而模型只是去逼近这个上限。&#xA;但是Missing Data Imputation是个很大的问题，具体情况具体分析，很难一概而论。涉及行业背景、特征间的关系、数据缺失的原因（随机缺失；非随机缺失；完全随机缺失，即只有一部分是可以通过统计方法处理的，另一些只能靠重新采集数据）、缺失值处理方法（少的话直接删掉，或者简单填充，连续数用均值，离散数用众数，也可以建模用统计或机器学习方法填充，也可以不用管，有的模型如XGBoost会自动处理缺失值，对流数据处理方法又有不同），还有其他诸多因素。&#xA;一些参考文献和包：&#xA;文献 很全面的综述，对于分类问题怎么处理缺失值：García-Laencina, Pedro J., José-Luis Sancho-Gómez, and Aníbal R. Figueiras-Vidal. &amp;ldquo;Pattern classification with missing data: a review.&amp;rdquo; Neural Computing and Applications 19.2 (2010): 263-282.&#xA;随机森林分类问题下缺失值的处理：Overcoming Missing Values in A Random Forest Classifier, By Alok, GUPTA&#xA;简单介绍特征工程（缺失值处理可以看做特征工程的一部分）：Discover Feature Engineering, How to Engineer Features and How to Get Good at It&#xA;常用工具包 fancyimpute (https://github.com/iskandr/fancyimpute)&#xA;multiple-imputation (http://www.stefvanbuuren.nl/mi/index.html)</description>
+    </item>
+    <item>
+      <title>社会科学研究中的因果推断</title>
+      <link>https://wenting-wang.github.io/post/2022/03/04/causal-inference-social-science/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2022/03/04/causal-inference-social-science/</guid>
+      <description>&lt;p&gt;相关性不能说明因果。几乎完全依赖于观察，很少做对照实验的社会科学，又怎么度量因果呢？关键在处理混杂因素（Confounder）。这里稍作整理，粗略梳理了一下社会科学中因果推断（Causal Inference）的常用方法，再附上一些实例：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

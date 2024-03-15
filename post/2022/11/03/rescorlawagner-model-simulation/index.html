@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rescorla–Wagner model simulation | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Rescorla–Wagner model simulation</span></h1>
+
+<h2 class="date">2022/11/03</h2>
+</div>
+
+<main>
+<p>The Rescorla-Wagner model captures key aspects of classical conditioning(Pavlovian experiment). It is based on a simple linear equation that predicts the reward associated with a stimulus.</p>
+<h2 id="variables">Variables</h2>
+<p>Conditioned stimulus: <code>$ x \in \{ 0,1 \} $</code>.</p>
+<p>Unconditioned stimulus: <code>$ r\in \{ 0,1 \} $</code>.</p>
+<p>Associative strength between <code>$x$</code> and <code>$r$</code>: <code>$ w\in \mathbb{R} $</code>.</p>
+<p>e.g. by hearing a tone <code>$x$</code>, how likely <code>$w$</code> the animal would think of cheese <code>$r$</code>.</p>
+<p>Prediction error: <code>$ \delta = r-wx $</code></p>
+<p>With learning, the prediction error will gradually approach zero, meaning there will be less and eventually no more prediction error or, say, no more surprise.</p>
+<h2 id="learning-process">Learning process</h2>
+<p>How does the associative strength change? i.e. How does animal learn that the tone and cheese are associated?</p>
+<p>Following the Rescorla-Wagner rule - designed to minimise <code>$\frac{1}{2} \delta^2$</code>, associative streghth <code>$w$</code> is updated by linearly adding a prediction error, adjusted by the learning rate <code>$\alpha$</code>, i.e. how fast the animal learn.</p>
+<p><code>$$ w \leftarrow w + \alpha(r - wx)x$$</code></p>
+<p>If x is always 1(i.e. there is always cheese following a tone), simplify the above equation as</p>
+<p>$$ w \leftarrow w + \alpha(r - w)$$</p>
+<p>PS. The learning process designed by the R-W rule is the same as stochastic gradient ascent(SGA).</p>
+<p>The gradient of <code>$\frac{1}{2} \delta^2$</code> is</p>
+<p>$$ grad = \frac{d}{dw} \frac{1}{2} \delta^2 = \frac{d}{dw} \frac{1}{2} (r-wx)^2 = (r-wx)x$$</p>
+<p>Update <code>$w$</code> by</p>
+<p>$$ w \leftarrow w + \alpha \times grad  $$</p>
+<p>which is exactly</p>
+<p>$$ w \leftarrow w + \alpha(r - wx)x  $$</p>
+<h2 id="simulation">Simulation</h2>
+<pre><code class="language-python3"># R-W Model
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+trial_ind = np.array(range(50))
+
+x_lst = np.full(len(trial_ind), 1)
+r_lst = np.full(len(trial_ind), 1)
+w_lst = []
+delta_lst = []
+
+# init
+w_lst.append(0)
+
+lr = 0.1
+
+for i in range(len(trial_ind)):
+    delta = r_lst[i] - w_lst[i] * x_lst[i]
+    w = w_lst[i] + lr * delta
+    delta_lst.append(delta)
+    w_lst.append(w)
+
+# remove init w
+w_lst.pop(0)
+
+# plot
+plt.title(&quot;predition error decreases to 0&quot;)
+plt.plot(trial_ind, delta_lst)
+
+plt.title(&quot;associative strength increases to 1&quot;)
+plt.plot(trial_ind, w_lst)
+</code></pre>
+<p><img src="/img/d019-rl-04-img1.png" alt="d019-rl-04-img1"></p>
+<p><img src="/img/d019-rl-04-img2.png" alt="d019-rl-04-img2"></p>
+<h2 id="reference">Reference</h2>
+<p>Dayan, Peter, and Laurence F. Abbott. Theoretical neuroscience: computational and mathematical modeling of neural systems. MIT press, 2005.</p>
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

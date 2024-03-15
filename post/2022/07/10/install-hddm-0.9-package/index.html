@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Install HDDM 0.9 package | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Install HDDM 0.9 package</span></h1>
+
+<h2 class="date">2022/07/10</h2>
+</div>
+
+<main>
+<p><a href="https://github.com/hddm-devs/hddm">HDDM</a>(Hierachical Drift Diffusion Model) is a python toolbox for hierarchical Bayesian parameter estimation of the Drift Diffusion Model (via PyMC), which is used widely in psychology and cognitive neuroscience to simulate the decision making process.</p>
+<h2 id="how-to-install-hddm-via-conda">How to install HDDM via Conda</h2>
+<ol>
+<li>Create conda environment and activate it</li>
+</ol>
+<pre><code>conda create --name hdmm-0.9 python=3.9
+conda activate hdmm-0.9
+</code></pre>
+<p>PS. If you want to set the environment as default, go to <code>~/.zshrc</code> or <code>~/.bashrc</code> and add this line: <code>conda activate hddm-0.9</code>.</p>
+<p>PSS. To remove any environment, go back to base environment <code>conda activate base</code>, then remove what you want by <code>conda env remove -n hdmm-0.9</code>.</p>
+<ol start="2">
+<li>Install package using <strong>conda</strong>(do not use pip, incompatibile issues!)</li>
+</ol>
+<pre><code>conda install cython
+conda install pymc==2.3.8
+conda install git pip
+pip install git+https://github.com/hddm-devs/kabuki
+pip install git+https://github.com/hddm-devs/hddm
+# Optional
+conda install torch torchvision torchaudio --&gt;
+</code></pre>
+<ol start="3">
+<li>Test if HDDM successfully installed</li>
+</ol>
+<p>Test the codes below in a python script.</p>
+<pre><code class="language-python">import hddm
+
+# Load data from csv file into a NumPy structured array
+data = hddm.load_csv('simple_difficulty.csv')
+
+# Create a HDDM model multi object
+model = hddm.HDDM(data, depends_on={'v':'difficulty'})
+
+# Create model and start MCMC sampling
+model.sample(2000, burn=20)
+
+# Print fitted parameters and other model statistics
+model.print_stats()
+
+# Plot posterior distributions and theoretical RT distributions
+model.plot_posteriors()
+model.plot_posterior_predictive()
+</code></pre>
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

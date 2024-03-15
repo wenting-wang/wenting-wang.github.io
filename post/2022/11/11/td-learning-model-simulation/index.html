@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TD Learning model simulation | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">TD Learning model simulation</span></h1>
+
+<h2 class="date">2022/11/11</h2>
+</div>
+
+<main>
+<p>Through Temporal Difference (TD) learning, an agent learns from future rewards and back-propagates prediction errors by updating value estimates. Basically, the agent is continually updating beliefs about future rewards as it approaches the future. It is the core concept of model-free reinforcement learning.</p>
+<h2 id="variables">Variables</h2>
+<p>Conditioned stimulus: <code>$ u \in \{ 0,1 \} $</code>.</p>
+<p>Unconditioned stimulus: <code>$ r\in \{ 0,1 \} $</code>.</p>
+<p>The linear filter used to build convolutional kernel: <code>$ w\in \mathbb{R} $</code>.</p>
+<p>As learning progresses, the prediction error upon receiving a reward will gradually decrease to zero. This means there will be less and eventually no surprise when obtaining the reward.</p>
+<p>The prediction error will propagate back to the cue onset time. Once the animal hears the cue, the prediction error (surprise) occurs.</p>
+<h2 id="learning-process">Learning process</h2>
+<p>Similar to the Rescorla-Wagner rule - designed to minimise <code>$\frac{1}{2} \delta^2$</code>, adjust value with the TD learning rule:</p>
+<p>$$V_t = \sum_{\tau=0}^t w(\tau)u(t-\tau)$$</p>
+<p>$$V_{t+1} = \sum_{\tau=0}^{t+1} w(\tau)u(t+1-\tau)$$</p>
+<p>$$ \delta_t = r_t + V_{t+1} - V_t $$</p>
+<p>$$ w(\tau) \leftarrow w(\tau) + \alpha\delta_tu(t-\tau)$$</p>
+<p><code>$\alpha$</code> is the learning rate. <code>$\delta_t$</code> is the prediction error at time $t$.</p>
+<h2 id="a-demo">A demo</h2>
+<p>Assume that the cue onset at time 2(<code>$u_2=1$</code> and <code>$u_{others}=0$</code>), and reward onset at time 5(<code>$r_5=1$</code> and <code>$r_{others}=0$</code>). Set learning rate <code>$\alpha$</code> as <code>$0.5$</code>.</p>
+<p>In the <strong>first</strong> trial, update prediction error <code>$\delta_t$</code> at time <code>$t=5$</code>, when the reward is obtained.</p>
+<p>$$\delta_5 = r_5 + V_6 - V_5 = 1+0-0=1$$</p>
+<p>Then update parameter</p>
+<p>$$w_3 \leftarrow w_3 + \alpha\delta_5 u_2 = 0+0.5\times1\times1=0.5$$</p>
+<p>which is equvalent to update value</p>
+<p>$$V_5 \leftarrow V_5 + \alpha\delta_5 = 0+0.5\times1=0.5$$</p>
+<p>Since $$V_5 = w_0u_5 + w_1u_4 + w_2u_3 + w_3u_2 + w_4u_1 + w_5u_0 = w_3 u_2 $$</p>
+<p>$$\frac{dV_5}{dw_3} = u_2$$</p>
+<p>In the <strong>second</strong> trial,</p>
+<p>at time <code>$t=4$</code>, update</p>
+<p>$$\delta_4 = r_4 + V_5 - V_4 = 0+0.5-0=0.5$$</p>
+<p>$$w_2 \leftarrow w_2 + \alpha\delta_4 u_2 = 0+0.5\times0.5\times1 = 0.25$$</p>
+<p>at time <code>$t=5$</code>, update</p>
+<p>$$\delta_5 = r_5 + V_6 - V_5 = 1+0-0.5=0.5$$</p>
+<p>$$w_3 \leftarrow w_3 + \alpha\delta_5 u_2 = 0.5+0.5\times0.5\times1 = 0.75$$</p>
+<p>In the <strong>third</strong> trial, update <code>$w_3, w_2, w_1$</code>. In the <strong>fourth and following</strong> trials, update <code>$w_3, w_2, w_1, w_0$</code>, until prediction error converges to zero.</p>
+<h2 id="simulation">Simulation</h2>
+<pre><code class="language-python3"># TD Learning model
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def td_learn(lr=0.2, trials_n=100, steps_n=40, cs=10, us=20):
+    &quot;&quot;&quot;TD Learning
+
+    Args:
+        lr (float): learning rate. Defaults to 0.2.
+        trials_n (int): number of trials. Defaults to 100.
+        steps_n (int): number of steps per trial. Defaults to 40.
+        cs (int): conditioned stimulus onset. Defaults to 10.
+        us (int): unconditioned stimulus onset step. Defaults to 20.
+    &quot;&quot;&quot;
+    # cue(unconditioned stimulus) onset at step cs
+    u = np.zeros(steps_n)
+    u[cs] = 1
+
+    # reward(conditioned stimulus) onset at step us
+    r = np.zeros(steps_n)
+    r[us] = 1
+
+    # w is the linear filter for convolutionary kernel
+    w = np.zeros((steps_n, trials_n))
+
+    # init to store v and delta
+    v = np.zeros((steps_n, trials_n))
+    delta = np.zeros((steps_n, trials_n))
+
+    # learning session
+    for t_i in range(trials_n - 1):
+        for s_i in range(steps_n - 1):
+            # update v(values) by linear filter w
+            v[s_i, t_i] = w[:s_i+1, t_i] @ u[s_i::-1]
+            v[s_i+1, t_i] = w[:s_i+1+1, t_i] @ u[s_i+1::-1]
+
+            # prediction error delta
+            delta[s_i, t_i] = r[s_i] + v[s_i+1, t_i] - v[s_i, t_i]
+
+            # update parameters
+            # v[s_i, t_i] += lr * delta[s_i, t_i]
+            w[:s_i+1, t_i] += lr * delta[s_i, t_i] * u[s_i::-1]
+
+        # v[:, t_i+1] = v[:, t_i]
+        # save w for the next trial
+        w[:, t_i+1] = w[:, t_i]
+
+    return delta, w, v
+
+
+def plot(trials_n, steps_n, num):
+
+    x = np.arange(0, trials_n)
+    y = np.arange(0, steps_n)
+
+    X, Y = np.meshgrid(x, y)
+    Z = num
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.plot_surface(X, Y, Z)
+
+    ax.set_xlabel('Trials')
+    ax.set_ylabel('Steps')
+    ax.set_zlabel('Delta')
+
+    ax.set_title('TD Learning Simulation')
+
+    plt.show()
+
+
+lr = 0.2
+trials_n = 100
+steps_n = 40
+
+delta, w, v = td_learn(lr, trials_n, steps_n, cs=10, us=20)
+# print(delta)
+plot(trials_n, steps_n, delta)
+</code></pre>
+<p><img src="/img/d020-rl-05-img1.png" alt="d019-rl-05-img1"></p>
+<h2 id="reference">Reference</h2>
+<p>Dayan, Peter, and Laurence F. Abbott. Theoretical neuroscience: computational and mathematical modeling of neural systems. MIT press, 2005.</p>
+
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+

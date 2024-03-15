@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/python/</link>
+    <description>Recent content in Python on Wenting Wang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cache history of mutable dictionary</title>
+      <link>https://wenting-wang.github.io/post/2023/09/05/cache-history-of-mutable-dictionary/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2023/09/05/cache-history-of-mutable-dictionary/</guid>
+      <description>The Python dictionary type is mutable, meaning that it can be modified after it is created. In the case below, a dictionary d is added to a cache list, and any changes made to d result in updates to both the old and new d entries in the cache.&#xA;d = {0: 0} cache = [] cache.append(d) print(cache) # [{0: 0}] d[0] = 1 cache.append(d) print(cache) # [{0: 1}, {0: 1}] An alternative approach, aside from using collections.</description>
+    </item>
+  </channel>
+</rss>
