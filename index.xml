@@ -6,8 +6,22 @@
     <description>Recent content in 王文婷 on Wenting Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://wenting-wang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从几何上重新理解马尔科夫决策过程</title>
+      <link>https://wenting-wang.github.io/note/2024/04/01/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/note/2024/04/01/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</guid>
+      <description>最近在给模型调参，本来只想用Jax重新写个轮子，趁着要向量化我的码，重新补了补数学。在分析、代数、几何、概率的交汇点看应用问题，再一次从不同的角度领会了数学和算法中秩序简洁的美。&#xA;马尔科夫过程（Markov Decision Process）&#xA;Lemma&#xA;Metric Space Cauchy sequence Converge Complete Norm Normed space Banach space Contraction&#xA;Theorem Application to MDP/POMDP Bellman operator&#xA;Corolary&#xA;有时间来填坑！</description>
+    </item>
+    <item>
+      <title>三月阅读</title>
+      <link>https://wenting-wang.github.io/note/2024/03/31/%E4%B8%89%E6%9C%88%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sun, 31 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/note/2024/03/31/%E4%B8%89%E6%9C%88%E9%98%85%E8%AF%BB/</guid>
+      <description>重新开始写读书笔记。&#xA;物理学的进化&#xA;历史并非偶然，“通古今之变”，“通”为其要。历史有连续性、有规律，历史研究才有意义，才可能“以史为鉴”。科学研究同理，比零散琐碎的知识点更重要的，是理解知识的发展及其原因。从现象描述到力学到场论，于高处重新梳理科学发展历程中，问题的提出，理论的建立、质疑、挑战、革新，数学工具的创造 - 如何抽象并解决实际问题。&#xA;知识是“人”对世界的解释。对同样的自然现象或试验结果往往有大相径庭的解释，受限于科学技术水平、政治经济结构、身份与立场。&#xA;重新解读“常识”总是必要的。可观测世界的是极小一部分，可解释的是其中更小的一部分。知识是关于世界的知识，也是人的界限。&#xA;The Computational Brain&#xA;高维模型预测更准，低维模型更好解释。也可能是人类的理解由于自身生理局限只能在低维。人类由自然选择演化至此，认知的结构尚且无法理解自身的生理结构。“如果我们的大脑是如此简单的器官，我们当然无法用这么简单的器官理解自己。” Leslie Orgel’s Second Law: “Evolution is smarter than you are.”&#xA;“An epistemologically brilliant rat who feels neither fear nor hunger will not pass on his genes.” 没有生存压力的物种是不会演化的。没有痛苦和饥饿的老鼠是不会传下基因的。从演化的角度，痛苦与死亡似乎是必须的。穿越时间长河留下的生命区别于机器的特质：死的恐惧、生的欲望。&#xA;“理性”只是人类一厢情愿的定义，自然界并无理性非理性。只有适应或不适应当前环境的。适应的留下了，环境无时无刻在塑造着物种的行为和思维。心理问题是否可能源自生物在自然或社会环境适应不良。尤其信息爆炸的当代社会，大脑带宽远远不足，感官刺激强烈且易得，多巴胺持续波动。在快感和失落之间冲浪，自然诱发多重心理问题：焦虑、抑郁、双向、注意力缺陷…（准备重读读卡伦霍妮、福柯、鲍德里亚。虽然现在在行为主义的框架下研究精神和神经问题，总是一次次回到社会学视角。毕竟现实远比理论魔幻，而理论也应该有现实意义。）&#xA;The Cybernetic Brain: Sketches of Another Future&#xA;Karlsruhe的ZKM正在办展（Renaissance 3.0），看了一圈生物和科技大融合的新媒体艺术，原来控制论的思潮早在50th已出现，甚至早于信息论。回来后继续读这本控制论大脑，几位先驱的重要工作，上世纪控制论在英国的萌芽，&#xA;莫扎特&#xA;计算之魂&#xA;The Cybernetic Brain&#xA;Reference&#xA;物理学的进化（The Evolution of Physics: From Early Concepts to Relativity and Quanta），阿尔伯特·爱因斯坦，张卜天（译）&#xA;Churchland, Patricia Smith, and Terrence Joseph Sejnowski.</description>
+    </item>
     <item>
       <title>从几何上重新理解马尔科夫链</title>
       <link>https://wenting-wang.github.io/post/2024/03/15/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/</link>
@@ -17,10 +31,10 @@
     </item>
     <item>
       <title>Blender几何节点建模细胞</title>
-      <link>https://wenting-wang.github.io/note/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</link>
+      <link>https://wenting-wang.github.io/post/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://wenting-wang.github.io/note/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</guid>
-      <description>Blender几何节点（Geometry nodes）实在是神奇。学着建了个细胞模型。之后想用来建模植物生长和随机过程。&#xA;参考资料</description>
+      <guid>https://wenting-wang.github.io/post/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</guid>
+      <description>神奇的Blender几何节点（Geometry nodes）。学着建了个细胞模型。从空间上重新理解了一些线性代数的知识。之后想试着用来建模植物生长、信息传递、仿生结构、随机过程等等。&#xA;参考资料&#xA;【Blender教程】超简单！Blender点阵置换细胞动画来了</description>
     </item>
     <item>
       <title>植物中的递归</title>

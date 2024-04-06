@@ -6,8 +6,15 @@
     <description>Recent content in Math on Wenting Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://wenting-wang.github.io/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从几何上重新理解马尔科夫决策过程</title>
+      <link>https://wenting-wang.github.io/note/2024/04/01/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/note/2024/04/01/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</guid>
+      <description>最近在给模型调参，本来只想用Jax重新写个轮子，趁着要向量化我的码，重新补了补数学。在分析、代数、几何、概率的交汇点看应用问题，再一次从不同的角度领会了数学和算法中秩序简洁的美。&#xA;马尔科夫过程（Markov Decision Process）&#xA;Lemma&#xA;Metric Space Cauchy sequence Converge Complete Norm Normed space Banach space Contraction&#xA;Theorem Application to MDP/POMDP Bellman operator&#xA;Corolary&#xA;有时间来填坑！</description>
+    </item>
     <item>
       <title>从几何上重新理解马尔科夫链</title>
       <link>https://wenting-wang.github.io/post/2024/03/15/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/</link>
@@ -17,10 +24,10 @@
     </item>
     <item>
       <title>Blender几何节点建模细胞</title>
-      <link>https://wenting-wang.github.io/note/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</link>
+      <link>https://wenting-wang.github.io/post/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://wenting-wang.github.io/note/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</guid>
-      <description>Blender几何节点（Geometry nodes）实在是神奇。学着建了个细胞模型。之后想用来建模植物生长和随机过程。&#xA;参考资料</description>
+      <guid>https://wenting-wang.github.io/post/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</guid>
+      <description>神奇的Blender几何节点（Geometry nodes）。学着建了个细胞模型。从空间上重新理解了一些线性代数的知识。之后想试着用来建模植物生长、信息传递、仿生结构、随机过程等等。&#xA;参考资料&#xA;【Blender教程】超简单！Blender点阵置换细胞动画来了</description>
     </item>
     <item>
       <title>植物中的递归</title>

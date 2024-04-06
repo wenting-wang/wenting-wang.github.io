@@ -16,6 +16,13 @@
       <description>问题描述 状态沿着马尔可夫链（Markov chain）按照一定概率规则（转移矩阵）转移，下一步往哪转怎么转只和当前状态有关，和之前状态无关。某一条链：&#xA;$$S_1 \rightarrow S_2 \rightarrow S_2 \rightarrow S_1 \rightarrow &amp;hellip;$$&#xA;一段时间后，经过$S_1$和$S_2$的频率（或概率）是多少？和转移依据的规则肯定有关系，那是什么关系？每条连经过两个状态的比例都相同吗？&#xA;算一算 状态向量（state vector）为一个概率向量（state vector）， 如：&#xA;$$\mathbf{w} = \begin{bmatrix} w_1 \\ w_2\end{bmatrix}= \begin{bmatrix} 0.9 \\ 0.1\end{bmatrix}$$&#xA;表示此时在状态$S_1$的概率为0.9，在状态$S_2$的概率为0.1。&#xA;转移矩阵（transition matrix）是一个随机矩阵（stochastic matrix）：&#xA;$$P = \begin{bmatrix} p_{11} &amp;amp; p_{21}\\ p_{12} &amp;amp; p_{22} \end{bmatrix}=\begin{bmatrix} 0.8 &amp;amp; 0.6\\ 0.2 &amp;amp; 0.4 \end{bmatrix}$$&#xA;$p_{ij}$表示从状态$S_i$到状态$S_j$的转移概率。&#xA;从任意一个向量出发，经过多次线性变换（linear transformation），如果转移矩阵是正则的（regular），总会收敛到一个平稳状态向量（steady-state vector）：&#xA;$$\mathbf{w} \leftarrow P\mathbf{w} = \begin{bmatrix} 0.8 &amp;amp; 0.6\\ 0.2 &amp;amp; 0.4 \end{bmatrix} \begin{bmatrix} 0.9 \\ 0.1 \end{bmatrix}=\begin{bmatrix} 0.</description>
     </item>
     <item>
+      <title>Blender几何节点建模细胞</title>
+      <link>https://wenting-wang.github.io/post/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wenting-wang.github.io/post/2024/03/14/blender%E5%87%A0%E4%BD%95%E8%8A%82%E7%82%B9%E5%BB%BA%E6%A8%A1%E7%BB%86%E8%83%9E/</guid>
+      <description>神奇的Blender几何节点（Geometry nodes）。学着建了个细胞模型。从空间上重新理解了一些线性代数的知识。之后想试着用来建模植物生长、信息传递、仿生结构、随机过程等等。&#xA;参考资料&#xA;【Blender教程】超简单！Blender点阵置换细胞动画来了</description>
+    </item>
+    <item>
       <title>植物中的递归</title>
       <link>https://wenting-wang.github.io/post/2024/03/11/%E6%A4%8D%E7%89%A9%E4%B8%AD%E7%9A%84%E9%80%92%E5%BD%92/</link>
       <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>

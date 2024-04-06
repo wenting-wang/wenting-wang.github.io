@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notes on Wenting Wang</title>
-    <link>https://wenting-wang.github.io/note/</link>
-    <description>Recent content in Notes on Wenting Wang</description>
+    <title>Read on Wenting Wang</title>
+    <link>https://wenting-wang.github.io/categories/read/</link>
+    <description>Recent content in Read on Wenting Wang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://wenting-wang.github.io/note/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>从几何上重新理解马尔科夫决策过程</title>
-      <link>https://wenting-wang.github.io/note/2024/04/01/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</link>
-      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://wenting-wang.github.io/note/2024/04/01/%E4%BB%8E%E5%87%A0%E4%BD%95%E4%B8%8A%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B/</guid>
-      <description>最近在给模型调参，本来只想用Jax重新写个轮子，趁着要向量化我的码，重新补了补数学。在分析、代数、几何、概率的交汇点看应用问题，再一次从不同的角度领会了数学和算法中秩序简洁的美。&#xA;马尔科夫过程（Markov Decision Process）&#xA;Lemma&#xA;Metric Space Cauchy sequence Converge Complete Norm Normed space Banach space Contraction&#xA;Theorem Application to MDP/POMDP Bellman operator&#xA;Corolary&#xA;有时间来填坑！</description>
-    </item>
+    <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wenting-wang.github.io/categories/read/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>三月阅读</title>
       <link>https://wenting-wang.github.io/note/2024/03/31/%E4%B8%89%E6%9C%88%E9%98%85%E8%AF%BB/</link>

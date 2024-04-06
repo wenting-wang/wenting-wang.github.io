@@ -41,7 +41,7 @@
 <p>$$V_{t+1} = \sum_{\tau=0}^{t+1} w(\tau)u(t+1-\tau)$$</p>
 <p>$$ \delta_t = r_t + V_{t+1} - V_t $$</p>
 <p>$$ w(\tau) \leftarrow w(\tau) + \alpha\delta_tu(t-\tau)$$</p>
-<p><code>$\alpha$</code> is the learning rate. <code>$\delta_t$</code> is the prediction error at time $t$.</p>
+<p><code>$\alpha$</code> is the learning rate. <code>$\delta_t$</code> is the prediction error at time <code>$t$</code>.</p>
 <h2 id="a-demo">A demo</h2>
 <p>Assume that the cue onset at time 2(<code>$u_2=1$</code> and <code>$u_{others}=0$</code>), and reward onset at time 5(<code>$r_5=1$</code> and <code>$r_{others}=0$</code>). Set learning rate <code>$\alpha$</code> as <code>$0.5$</code>.</p>
 <p>In the <strong>first</strong> trial, update prediction error <code>$\delta_t$</code> at time <code>$t=5$</code>, when the reward is obtained.</p>
