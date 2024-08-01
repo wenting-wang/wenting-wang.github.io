@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dijkstra算法 | Wenting Wang</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Dijkstra算法</span></h1>
+
+<h2 class="date">2023/08/27</h2>
+</div>
+
+<main>
+<p>一根扯紧的绳子，每一段都应该是扯紧的。</p>
+<p>两点之间的最短路径，其中每一段都应该是最短的。例如，A-X-Z是最短路径(AX:1, XZ:1, AZ:3)。A到X是最短的；A经过X再到Z是所有起点为A终点为Z中最短的（比A到Z短）；X到Z是最短的。</p>
+<p>用Dynamic Programming的思想求解，从局部最优开始搜索优化。</p>
+<p>代码实现：</p>
+<pre><code class="language-python"># the shortest path
+
+def dijkstra(nodes, edges, source_index=0):
+    &quot;&quot;&quot;
+        nodes (list): list of nodes
+        edges (dict): {(node, node): distance}
+        source_index (int, optional): souce node
+        return (dict): the shortest distance from source
+    &quot;&quot;&quot;
+    path_length = {v: float('inf') for v in nodes}
+    path_length[source_index] = 0
+
+    adjacent_nodes = {v: {} for v in nodes}
+    for (u, v), w_uv in edges.items():
+        adjacent_nodes[u][v] = w_uv
+        adjacent_nodes[v][u] = w_uv
+
+    temporary_nodes = [v for v in nodes]
+    while len(temporary_nodes) &gt; 0:
+        upper_bound = {v: path_length[v] for v in temporary_nodes}
+        u = min(upper_bound, key=upper_bound.get)
+
+        temporary_nodes.remove(u)
+
+        for v, w_uv in adjacent_nodes[u].items():
+            path_length[v] = min(path_length[v], path_length[u] + w_uv)
+    return path_length
+
+
+nodes = [0, 1, 2, 3, 4, 5]
+edges = {(0, 1): 1, (0, 2): 1.5, (0, 3): 2, (1, 3): 0.5, (1, 4): 2.5, (2, 3): 1.5, (3, 5): 1}
+shortest_path = dijkstra(nodes, edges, source_index=0)
+print(shortest_path)
+</code></pre>
+<h2 id="reference">Reference</h2>
+<p><a href="https://www.youtube.com/watch?v=VnTlW572Sc4&amp;list=PLaxOs-8sLebsVKDTIud6mkxKGPDqv1LO2&amp;index=2&amp;ab_channel=CodingPerspective">Dijkstra&rsquo;s Algorithm - Dynamic Programming Algorithms in Python (Part 2)</a></p>
+
+</main>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://wenting-wang.github.io/">Wenting Wang</a> 2019 &ndash; 2024
+  
+  </footer>
+  </body>
+</html>
+
